@@ -150,8 +150,6 @@ function Form() {
     setDisabled(false);
   };
 
-  console.log(state)
-
   const classes = useStyles();
 
   return (
