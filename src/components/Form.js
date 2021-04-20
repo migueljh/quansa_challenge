@@ -102,7 +102,7 @@ function Form() {
     },
   });
 
-  const onChangeSession = (name, value) => {
+  const handleInputChange = (name, value) => {
     setState((prevState) => ({
       ...prevState,
       [name]: value,
@@ -150,8 +150,6 @@ function Form() {
     setDisabled(false);
   };
 
-  console.log(state)
-
   const classes = useStyles();
 
   return (
@@ -185,14 +183,14 @@ function Form() {
                 email={state.email}
                 phoneNumber={state.phoneNumber}
                 companyName={state.companyName}
-                onChangeInput={onChangeSession}
+                onChangeInput={handleInputChange}
               />
               <SessionData
                 device={state.session.device}
                 deviceOS={state.session.deviceOS}
                 deviceId={state.session.deviceId}
                 appVersion={state.session.appVersion}
-                onChangeInput={onChangeSession}
+                onChangeInput={handleInputChange}
               />
             </AccordionDetails>
           </div>
@@ -222,7 +220,7 @@ function Form() {
                   accountNumber={state.bank.accountNumber}
                   name={state.bank.name}
                   balance={state.balance}
-                  onChangeInput={onChangeSession}
+                  onChangeInput={handleInputChange}
                 />
               </AccordionDetails>
             </div>
@@ -252,7 +250,7 @@ function Form() {
                   createdAt={state.withdrawals[0].createdAt}
                   paidAt={state.withdrawals[0].paidAt}
                   disabled={disabled}
-                  onChangeInput={onChangeSession}
+                  onChangeInput={handleInputChange}
                 />
               </AccordionDetails>
             </div>
